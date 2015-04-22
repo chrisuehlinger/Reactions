@@ -14,7 +14,7 @@ var svg = d3.select("svg")
 
 var force = d3.layout.force()
     .size([width, height])
-    .charge(-400)
+    .charge(function(d){ return d.energy*100 || -300; })
     .linkDistance(function(d) { return 2*radius(d.source.size) + 2*radius(d.target.size) + 50; });
 var graph;
 d3.json("data/graph.json", function(json) {
@@ -64,23 +64,44 @@ d3.json("data/graph.json", function(json) {
   console.log(graph.nodes);
   
   function tick() {
-    if(startChecking || new Date - startTime > 5000){
+    if(startChecking || new Date - startTime > 2000){
       startChecking = true;
+      var hasChanged = false;
       // Break bonds when their length exceeds their energy
-      
-      
-      var linkCount = graph.links.length;
       graph.links = graph.links.filter(function(d) { 
         if(d.energy < nodeDistance(d.source, d.target)){
           d.source.energy++;
           d.target.energy++;
+          hasChanged = true;
           return false;
         } else {
           return true;
         }
       });
       
-      if(graph.links.length < linkCount){
+      
+      // Form bonds between eligible elements
+      if(!hasChanged && new Date % 10 === 0){
+        var i, j;
+        for(i = 0; i < graph.nodes.length-1 && !hasChanged; i++)
+          for(j = i+1; j < graph.nodes.length && !hasChanged; j++){
+            //console.log('heyo',graph.nodes[i], graph.nodes[j]);
+            if(graph.nodes[i].energy > 0 && graph.nodes[j].energy > 0 
+               && nodeDistance(graph.nodes[i], graph.nodes[j]) < 100){
+              hasChanged = true;
+              graph.nodes[i].energy--;
+              graph.nodes[j].energy--;
+              graph.links.push({
+                source:graph.nodes[i],
+                target: graph.nodes[j],
+                bond: 1,
+                energy: 300
+              });
+            }
+          }
+      }
+      
+      if(hasChanged){
         force.links(graph.links);
 
         link.remove();
