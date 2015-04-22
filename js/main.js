@@ -1,6 +1,6 @@
 'use strict';
 
-var width = window.outerWidth,
+var width = 960 || window.outerWidth,
     height = window.innerHeight;
 
 var color = d3.scale.category20();
