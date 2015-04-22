@@ -18,7 +18,7 @@ var force = d3.layout.force()
     .charge(-400)
     .linkDistance(function(d) { return radius(d.source.size) + radius(d.target.size) + 20; });
 
-d3.json("graph.json", function(graph) {
+d3.json("data/graph.json", function(graph) {
   force
       .nodes(graph.nodes)
       .links(graph.links)
