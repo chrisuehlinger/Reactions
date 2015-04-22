@@ -1,3 +1,21 @@
+body {
+  position: relative;
+  margin: 0;
+}
+
+cite {
+  position:fixed;
+  bottom: 5px;
+  right: 5px;
+}
+
+svg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border: 1px solid black;
+}
+
 .link line {
   stroke: #696969;
 }
