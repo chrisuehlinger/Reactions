@@ -12,7 +12,16 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <svg></svg>
+        <svg xmlns:mydata="http://www.myexample.com/whatever">
+          <filter id="drop-shadow" x="-50%" width="200%" y="-50%" height="200%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="5"/> <!-- stdDeviation is how much to blur -->
+            <feOffset dx="0" dy="0" result="offsetblur"/> <!-- how much to offset -->
+            <feMerge> 
+              <feMergeNode/> <!-- this contains the offset blurred image -->
+              <feMergeNode in="SourceGraphic"/> <!-- this contains the element that the filter is applied to -->
+            </feMerge>
+          </filter>
+        </svg>
         <cite>Based on Mike Bostock's <a href="http://bl.ocks.org/mbostock/3037015">Molecule</a>.</cite>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
         <script src="http://d3js.org/d3.v3.min.js"></script>

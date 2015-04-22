@@ -45,6 +45,7 @@ d3.json("data/graph.json", function(json) {
 
   node.append("circle")
       .attr("r", function(d) { return 2*radius(d.size); })
+      .attr("mydata:energy", function(d){ return d.energy; })
       .style("fill", function(d) { return color(d.atom); });
 
   node.append("text")
@@ -60,6 +61,7 @@ d3.json("data/graph.json", function(json) {
       startChecking = false;
   console.log(link);
   console.log(graph.links);
+  console.log(graph.nodes);
   
   function tick() {
     if(startChecking || new Date - startTime > 5000){
@@ -68,7 +70,15 @@ d3.json("data/graph.json", function(json) {
       
       
       var linkCount = graph.links.length;
-      graph.links = graph.links.filter(function(d) { return d.energy > nodeDistance(d.source, d.target); });
+      graph.links = graph.links.filter(function(d) { 
+        if(d.energy < nodeDistance(d.source, d.target)){
+          d.source.energy++;
+          d.target.energy++;
+          return false;
+        } else {
+          return true;
+        }
+      });
       
       if(graph.links.length < linkCount){
         force.links(graph.links);
@@ -83,25 +93,27 @@ d3.json("data/graph.json", function(json) {
         link.append("line")
             .style("stroke-width", function(d) { return (d.bond * 2 - 1) * 2 + "px"; });
 
-        link.filter(function(d) { return d.bond > 1; }).append("line")
+        link.filter(function(d) { return d.bond > 1; })
+            .append("line")
             .attr("class", "separator");
         
         node.remove();
         
         node = svg.selectAll(".node")
-      .data(graph.nodes)
-    .enter().append("g")
-      .attr("class", "node")
-      .call(force.drag);
+            .data(graph.nodes)
+          .enter().append("g")
+            .attr("class", "node")
+            .call(force.drag);
 
-  node.append("circle")
-      .attr("r", function(d) { return 2*radius(d.size); })
-      .style("fill", function(d) { return color(d.atom); });
+        node.append("circle")
+            .attr("r", function(d) { return 2*radius(d.size); })
+            .attr("mydata:energy", function(d){ return d.energy; })
+            .style("fill", function(d) { return color(d.atom); });
 
-  node.append("text")
-      .attr("dy", ".35em")
-      .attr("text-anchor", "middle")
-      .text(function(d) { return d.atom; });
+        node.append("text")
+            .attr("dy", ".35em")
+            .attr("text-anchor", "middle")
+            .text(function(d) { return d.atom; });
       }
     }
     
