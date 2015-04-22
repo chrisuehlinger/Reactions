@@ -6,7 +6,7 @@ var width = window.outerWidth || window.innerWidth || 960,
 var color = d3.scale.category20();
 
 var radius = d3.scale.sqrt()
-    .range([0, 6]);
+    .range([3, 6]);
 
 var svg = d3.select("svg")
     .attr("width", width)
@@ -15,7 +15,7 @@ var svg = d3.select("svg")
 var force = d3.layout.force()
     .size([width, height])
     .charge(-400)
-    .linkDistance(function(d) { return radius(d.source.size) + radius(d.target.size) + 30; });
+    .linkDistance(function(d) { return 2*radius(d.source.size) + 2*radius(d.target.size) + 50; });
 var graph;
 d3.json("data/graph.json", function(json) {
   graph = json;
@@ -44,7 +44,7 @@ d3.json("data/graph.json", function(json) {
       .call(force.drag);
 
   node.append("circle")
-      .attr("r", function(d) { return radius(d.size); })
+      .attr("r", function(d) { return 2*radius(d.size); })
       .style("fill", function(d) { return color(d.atom); });
 
   node.append("text")
@@ -95,7 +95,7 @@ d3.json("data/graph.json", function(json) {
       .call(force.drag);
 
   node.append("circle")
-      .attr("r", function(d) { return radius(d.size); })
+      .attr("r", function(d) { return 2*radius(d.size); })
       .style("fill", function(d) { return color(d.atom); });
 
   node.append("text")

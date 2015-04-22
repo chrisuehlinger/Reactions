@@ -15,22 +15,25 @@ svg {
   top: 0;
   left: 0;
   border: 1px solid black; }
+  /* line 18, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+  svg * {
+    -webkit-tap-highlight-color: transparent; }
 
-/* line 19, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+/* line 23, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
 .link line {
   stroke: #696969; }
 
-/* line 23, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+/* line 27, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
 .link line.separator {
   stroke: #fff;
   stroke-width: 2px; }
 
-/* line 28, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+/* line 32, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
 .node circle {
   stroke: #000;
   stroke-width: 1.5px; }
 
-/* line 33, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+/* line 37, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
 .node text {
   font: 10px sans-serif;
   pointer-events: none; }
