@@ -1,0 +1,141 @@
+@import url(http://fonts.googleapis.com/css?family=Oxygen)
+@import url(http://fonts.googleapis.com/css?family=Courgette)
+  
+@-webkit-keyframes bounceInLeft 
+  0%, 60%, 75%, 90%, 100% 
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000)
+  
+
+  0% 
+    opacity: 0
+    transform: translate3d(-3000px, 0, 0)
+  
+
+  60% 
+    opacity: 1
+    transform: translate3d(25px, 0, 0)
+  
+
+  75% 
+    transform: translate3d(-10px, 0, 0)
+  
+
+  90% 
+    transform: translate3d(5px, 0, 0)
+  
+
+  100% 
+    transform: none
+  
+@keyframes bounceInLeft 
+  0%, 60%, 75%, 90%, 100% 
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000)
+  
+
+  0% 
+    opacity: 0
+    transform: translate3d(-3000px, 0, 0)
+  
+
+  60% 
+    opacity: 1
+    transform: translate3d(25px, 0, 0)
+  
+
+  75% 
+    transform: translate3d(-10px, 0, 0)
+  
+
+  90% 
+    transform: translate3d(5px, 0, 0)
+  
+
+  100% 
+    transform: none
+    
+@-webkit-keyframes bounceOutLeft 
+  20% 
+    opacity: 1
+    transform: translate3d(10px, 0, 0)
+  
+
+  100% 
+    opacity: 0
+    transform: translate3d(-2000px, 0, 0)
+  
+
+    
+@keyframes bounceOutLeft 
+  20% 
+    opacity: 1
+    transform: translate3d(10px, 0, 0)
+  
+
+  100% 
+    opacity: 0
+    transform: translate3d(-2000px, 0, 0)
+  
+
+body 
+  margin: 0
+  
+.canvas-title
+  font-family: Courgette, cursive
+  padding-left: 50px
+  color: rgb(32, 154, 218)
+  border-bottom: 5px solid rgb(32, 154, 218)
+  margin: 0
+  position: fixed
+  transition: opacity 1s ease-out, transform 1s ease-out
+  -webkit-animation: bounceInLeft 1s
+  animation: bounceInLeft 1s 
+  
+  top: 20px
+  left: -30px
+  z-index: 101
+    
+  .article-mode &
+    z-index: -1
+    opacity: 0
+    transform: translate3d(-2000px, 0, 0)
+    
+
+
+canvas
+  position: fixed
+  top: 0
+  z-index: 100
+  .article-mode &
+    z-index: -1
+  
+article
+  max-width: 600px
+  margin: 0 auto
+  position: relative
+  font-family: Oxygen
+    
+p
+  line-height: 1.5
+
+.thumb
+  position: absolute
+    
+  .thumbinner
+    width: auto !important
+  
+  img
+    height: auto
+    max-width: 280px
+    
+  &.tright
+    left: 105%
+    padding-left: 10px
+    border-left: 1px solid black
+    
+  &.tleft
+    right: 105%
+    padding-right: 10px
+    border-right: 1px solid black
+  
+  
+  
