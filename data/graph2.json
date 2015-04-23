@@ -1,0 +1,32 @@
+{
+  "nodes": [
+    {"atom": "C", "size": 12, "valence":4, "shell":8},
+    {"atom": "C", "size": 12, "valence":4, "shell":8},
+    {"atom": "C", "size": 12, "valence":4, "shell":8},
+    {"atom": "N", "size": 14, "valence":5, "shell":8},
+    {"atom": "H", "size": 1,  "valence":1, "shell":2},
+    {"atom": "O", "size": 16, "valence":6, "shell":8},
+    {"atom": "O", "size": 16, "valence":6, "shell":8},
+    {"atom": "H", "size": 1,  "valence":1, "shell":2},
+    {"atom": "H", "size": 1,  "valence":1, "shell":2},
+    {"atom": "H", "size": 1,  "valence":1, "shell":2},
+    {"atom": "H", "size": 1,  "valence":1, "shell":2},
+    {"atom": "H", "size": 1,  "valence":1, "shell":2},
+    {"atom": "H", "size": 1,  "valence":1, "shell":2},
+    {"atom": "C", "size": 12, "valence":4, "shell":8},
+  ],
+  "links": [
+    {"source": 0, "target": 1,  "bond": 1, "energy":300},
+    {"source": 1, "target": 2,  "bond": 1, "energy":300},
+    {"source": 1, "target": 3,  "bond": 1, "energy":300},
+    {"source": 2, "target": 5,  "bond": 2, "energy":500},
+    {"source": 2, "target": 6,  "bond": 1, "energy":300},
+    {"source": 1, "target": 4,  "bond": 1, "energy":300},
+    {"source": 3, "target": 10, "bond": 1, "energy":300},
+    {"source": 3, "target": 11, "bond": 1, "energy":300},
+    {"source": 0, "target": 7,  "bond": 1, "energy":300},
+    {"source": 0, "target": 8,  "bond": 1, "energy":300},
+    {"source": 0, "target": 9,  "bond": 1, "energy":300},
+    {"source": 5, "target": 12, "bond": 1, "energy":300}
+  ]
+}
