@@ -25,6 +25,10 @@ var bondColor = d3.scale.linear()
                   .range(['#000', '#f00'])
                   .clamp(true);
 
+var bondStrength = d3.scale.linear()
+                    .domain([1,4])
+                    .range([0.1,0.4]);
+
 var radius = d3.scale.sqrt()
     .range([3, 6]);
 
@@ -35,7 +39,8 @@ var svg = d3.select("svg")
 var force = d3.layout.force()
     .size([width, height])
     .charge(function(d){ return d.energy || -400; })
-    .linkDistance(function(d) { return 2*radius(d.source.size) + 2*radius(d.target.size) + 50; });
+    .linkDistance(function(d) { return 2*radius(d.source.size) + 2*radius(d.target.size) + 50; })
+    .linkStrength(function(d) { return bondStrength(d.bond); });
 
 
 var graph;
