@@ -1,11 +1,8 @@
 {
   "nodes": [
     {"atom": "C", "size": 12, "energy":4},
-    {"atom": "C", "size": 12, "energy":4},
-    {"atom": "C", "size": 12, "energy":4},
     {"atom": "N", "size": 14, "energy":3},
     {"atom": "H", "size": 1,  "energy":1},
-    {"atom": "O", "size": 16, "energy":2},
     {"atom": "O", "size": 16, "energy":2},
     {"atom": "H", "size": 1,  "energy":1},
     {"atom": "H", "size": 1,  "energy":1},

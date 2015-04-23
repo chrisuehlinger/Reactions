@@ -66,7 +66,53 @@ svg {
 
 /* line 71, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
 .node text {
-  font: 10px sans-serif;
+  font: 12px sans-serif;
   pointer-events: none; }
+
+/* line 76, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+.console {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 15px;
+  background: rgba(53, 175, 240, 0.6);
+  border-right: 2px solid rgba(0, 68, 196, 0.81);
+  border-bottom: 2px solid rgba(0, 68, 196, 0.81);
+  border-bottom-right-radius: 10px; }
+  /* line 86, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+  .console a {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    font: 12px sans-serif;
+    color: black;
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 50%;
+    box-sizing: border-box; }
+    /* line 97, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+    .console a#add-hydrogen {
+      width: 24px;
+      height: 24px;
+      padding-top: 3px;
+      background: #ED760D; }
+    /* line 104, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+    .console a#add-carbon {
+      width: 53px;
+      height: 53px;
+      padding-top: 18px;
+      background: #1F77B4; }
+    /* line 111, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+    .console a#add-nitrogen {
+      width: 57px;
+      height: 57px;
+      padding-top: 20px;
+      background: #AEC7E8; }
+    /* line 118, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+    .console a#add-oxygen {
+      width: 60px;
+      height: 60px;
+      padding-top: 22px;
+      background: #FFBB78; }
 
 /*# sourceMappingURL=style.css.map */

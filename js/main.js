@@ -16,6 +16,8 @@ var force = d3.layout.force()
     .size([width, height])
     .charge(function(d){ return d.energy || -400; })
     .linkDistance(function(d) { return 2*radius(d.source.size) + 2*radius(d.target.size) + 50; });
+
+
 var graph;
 d3.json("data/graph1.json", function(json) {
   graph = json;
@@ -75,6 +77,30 @@ d3.json("data/graph1.json", function(json) {
         .text(function(d) { return d.atom; });
   }
   
+  d3.selectAll('.console a')
+    .on('click', function(){
+      console.log(d3.event.target.id);
+      var newNode;
+      switch(d3.event.target.id){
+        case 'add-hydrogen':
+          newNode = {"atom": "H", "size": 1,  "energy":1};
+          break;
+        case 'add-carbon':
+          newNode = {"atom": "C", "size": 12,  "energy":4};
+          break;
+        case 'add-nitrogen':
+          newNode = {"atom": "N", "size": 14,  "energy":3};
+          break;
+        case 'add-oxygen':
+          newNode = {"atom": "O", "size": 16,  "energy":2};
+          break;
+      }
+    
+      if(newNode){
+        graph.nodes.push(newNode);
+        render();
+      }
+    });
   
   function nodeDistance(n1, n2){
     return Math.sqrt((n2.y-n1.y)*(n2.y-n1.y) + (n2.x-n1.x)*(n2.x-n1.x));
