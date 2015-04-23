@@ -13,14 +13,13 @@
     </head>
     <body>
         <svg xmlns:mydata="http://www.myexample.com/whatever">
-          <filter id="drop-shadow" x="-50%" width="200%" y="-50%" height="200%">
-            <feGaussianBlur in="SourceAlpha" stdDeviation="5"/> <!-- stdDeviation is how much to blur -->
+          <filter id="drop-shadow" x="-75%" width="400%" y="-75%" height="400%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="10"/> <!-- stdDeviation is how much to blur -->
             <feColorMatrix result="offsetblur" type="matrix" values="
-                                                                     1 0 0 0   0
-                                                                     0 1 0 0   0
-                                                                     0 0 1 0   0
-                                                                     0 0 0 0.4 0 "/>
-            <feOffset dx="0" dy="0" result="offsetblur"/> <!-- how much to offset -->
+                                                                     2 2 2 2   0
+                                                                     0 0 0 0   0
+                                                                     0 0 0 0   0
+                                                                     0 0 0 1   0 "/>
             <feMerge> 
               <feMergeNode/> <!-- this contains the offset blurred image -->
               <feMergeNode in="SourceGraphic"/> <!-- this contains the element that the filter is applied to -->

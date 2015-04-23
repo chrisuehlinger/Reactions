@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Oxygen);
+
 @keyframes pulse {
   0% {
     transform: scale3d(1, 1, 1);
@@ -69,7 +71,7 @@ svg {
 }
 
 .node text {
-  font: 12px sans-serif;
+  font: 12px Oxygen,sans-serif;
   pointer-events: none;
 }
 
@@ -78,6 +80,9 @@ svg {
   top: 0;
   left: 0;
   padding:15px;
+  
+  font: 14px Oxygen, sans-serif;
+  
   background: rgba(53, 175, 240, 0.6);
   border-right: 2px solid rgba(0, 68, 196, 0.81);
   border-bottom: 2px solid rgba(0, 68, 196, 0.81);
@@ -87,38 +92,39 @@ svg {
     display: inline-block;
     vertical-align: middle;
     text-align: center;
-    font: 12px sans-serif;
+    
     color: black;
     text-decoration: none;
     border: 2px solid black;
     border-radius: 50%;
     box-sizing: border-box;
+    margin-left: 5px;
     
     &#add-hydrogen {
       width: 24px;
       height: 24px;
-      padding-top: 3px;
+      padding-top: 1px;
       background: #ED760D;
     }
     
     &#add-carbon {
       width: 53px;
       height: 53px;
-      padding-top: 18px;
+      padding-top: 16px;
       background: #1F77B4;
     }
     
     &#add-nitrogen {
       width: 57px;
       height: 57px;
-      padding-top: 20px;
+      padding-top: 18px;
       background: #AEC7E8;
     }
     
     &#add-oxygen {
       width: 60px;
       height: 60px;
-      padding-top: 22px;
+      padding-top: 20px;
       background: #FFBB78;
     }
   }
