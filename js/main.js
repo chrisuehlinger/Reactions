@@ -1,9 +1,29 @@
 'use strict';
 
+var poppingSounds;
+
+// the iPhone specifically seems to have problems playing these sounds
+if(navigator.userAgent.match(/iPhone/i))
+  poppingSounds = ['pop.wav', 
+                      'pop1.wav', 
+                      'pop2.wav' ].map(function(path){return 'audio/' + path;});
+else
+  poppingSounds = [ 'classic cartoon pop sound 2.wav', 
+                        'object1-1-6.wav', 
+                        'pop.wav', 
+                        'pop1.wav', 
+                        'pop2.wav' ].map(function(path){return 'audio/' + path;});
+
 var width = window.outerWidth || window.innerWidth || 960,
     height = window.innerHeight;
 
 var color = d3.scale.category20();
+
+var bondColor = d3.scale.linear()
+                  .domain([75,200])
+                  .interpolate(d3.interpolateRgb)
+                  .range(['#000', '#f00'])
+                  .clamp(true);
 
 var radius = d3.scale.sqrt()
     .range([3, 6]);
@@ -132,6 +152,17 @@ d3.json("data/graph1.json", function(json) {
         if(d.energy < nodeDistance(d.source, d.target)){
           d.source.energy += d.bond;
           d.target.energy += d.bond;
+          
+          var fileThisTime = poppingSounds[Math.floor(Math.random() * poppingSounds.length)];
+          var soundThisTime = new Audio(fileThisTime);
+          console.log(fileThisTime);
+          soundThisTime.play();
+          
+          svg.attr('class','BREAK');
+          setTimeout(function(){
+            svg.attr('class','');
+          }, 100);
+          
           hasChanged = true;
           return false;
         } else {
@@ -178,7 +209,8 @@ d3.json("data/graph1.json", function(json) {
         .attr("x1", function(d) { return d.source.x; })
         .attr("y1", function(d) { return d.source.y; })
         .attr("x2", function(d) { return d.target.x; })
-        .attr("y2", function(d) { return d.target.y; });
+        .attr("y2", function(d) { return d.target.y; })
+        .style("stroke", function(d) { return bondColor(nodeDistance(d.source, d.target));});
 
     node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
   }

@@ -43,6 +43,13 @@ svg {
   position: fixed;
   top: 0;
   left: 0;
+  background: #fff;
+  transition: -webkit-filter 0.1s;
+  
+  &.BREAK {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+  }
   
   * {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -54,7 +61,7 @@ svg {
 }
 
 .link line.separator {
-  stroke: #fff;
+  stroke: #fff !important;
   stroke-width: 2px;
 }
 

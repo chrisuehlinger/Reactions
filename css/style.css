@@ -40,37 +40,43 @@ cite {
 svg {
   position: fixed;
   top: 0;
-  left: 0; }
-  /* line 47, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+  left: 0;
+  background: #fff;
+  transition: -webkit-filter 0.1s; }
+  /* line 49, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+  svg.BREAK {
+    -webkit-filter: invert(1);
+    filter: invert(1); }
+  /* line 54, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
   svg * {
     -webkit-tap-highlight-color: transparent; }
 
-/* line 52, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+/* line 59, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
 .link line {
   stroke: #696969; }
 
-/* line 56, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+/* line 63, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
 .link line.separator {
-  stroke: #fff;
+  stroke: #fff !important;
   stroke-width: 2px; }
 
-/* line 61, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+/* line 68, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
 .node circle {
   stroke: #000;
   stroke-width: 1.5px; }
-  /* line 65, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+  /* line 72, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
   .node circle:not([energy="0"]) {
     -webkit-filter: url(#drop-shadow);
     filter: url(#drop-shadow);
     -webkit-animation: pulse .5s ease infinite;
     animation: pulse .5s ease inifinite; }
 
-/* line 73, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+/* line 80, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
 .node text {
   font: 12px Oxygen, sans-serif;
   pointer-events: none; }
 
-/* line 78, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+/* line 85, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
 .console {
   position: fixed;
   top: 0;
@@ -81,7 +87,7 @@ svg {
   border-right: 2px solid rgba(0, 68, 196, 0.81);
   border-bottom: 2px solid rgba(0, 68, 196, 0.81);
   border-bottom-right-radius: 10px; }
-  /* line 91, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+  /* line 98, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
   .console a {
     display: inline-block;
     vertical-align: middle;
@@ -92,25 +98,25 @@ svg {
     border-radius: 50%;
     box-sizing: border-box;
     margin-left: 5px; }
-    /* line 103, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+    /* line 110, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
     .console a#add-hydrogen {
       width: 24px;
       height: 24px;
       padding-top: 1px;
       background: #ED760D; }
-    /* line 110, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+    /* line 117, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
     .console a#add-carbon {
       width: 53px;
       height: 53px;
       padding-top: 16px;
       background: #1F77B4; }
-    /* line 117, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+    /* line 124, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
     .console a#add-nitrogen {
       width: 57px;
       height: 57px;
       padding-top: 18px;
       background: #AEC7E8; }
-    /* line 124, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+    /* line 131, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
     .console a#add-oxygen {
       width: 60px;
       height: 60px;
