@@ -73,6 +73,8 @@ svg {
   stroke-width: 1.5px; }
   /* line 81, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
   .node circle:not([energy="0"]) {
+    -webkit-filter: url(#drop-shadow);
+    filter: url(#drop-shadow);
     -webkit-animation: pulse .5s ease infinite;
     animation: pulse .5s ease inifinite; }
 
