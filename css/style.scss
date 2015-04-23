@@ -1,29 +1,37 @@
 @import url(http://fonts.googleapis.com/css?family=Oxygen);
 
+$scaleFactor: 1.1;
+
 @keyframes pulse {
   0% {
+    -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
 
   50% {
-    transform: scale3d(1.1, 1.1, 1.1);
+    -webkit-transform: scale3d($scaleFactor, $scaleFactor, $scaleFactor);
+    transform: scale3d($scaleFactor, $scaleFactor, $scaleFactor);
   }
 
   100% {
+    -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
 }
 
 @-webkit-keyframes pulse {
   0% {
+    -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
 
   50% {
-    transform: scale3d(1.1, 1.1, 1.1);
+    -webkit-transform: scale3d($scaleFactor, $scaleFactor, $scaleFactor);
+    transform: scale3d($scaleFactor, $scaleFactor, $scaleFactor);
   }
 
   100% {
+    -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
 }
@@ -31,6 +39,7 @@
 body {
   position: relative;
   margin: 0;
+  font: 14px Oxygen, sans-serif;
 }
 
 cite {
@@ -78,7 +87,7 @@ svg {
 }
 
 .node text {
-  font: 12px Oxygen,sans-serif;
+  font: 14px Oxygen,sans-serif;
   pointer-events: none;
 }
 
@@ -87,8 +96,6 @@ svg {
   top: 0;
   left: 0;
   padding:15px;
-  
-  font: 14px Oxygen, sans-serif;
   
   background: rgba(53, 175, 240, 0.6);
   border-right: 2px solid rgba(0, 68, 196, 0.81);

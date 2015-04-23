@@ -1,93 +1,99 @@
 @import url(http://fonts.googleapis.com/css?family=Oxygen);
 @keyframes pulse {
-  /* line 4, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+  /* line 6, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
   0% {
+    -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1); }
 
-  /* line 8, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+  /* line 11, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
   50% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
     transform: scale3d(1.1, 1.1, 1.1); }
 
-  /* line 12, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+  /* line 16, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
   100% {
+    -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1); } }
 
 @-webkit-keyframes pulse {
-  /* line 18, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+  /* line 23, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
   0% {
+    -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1); }
 
-  /* line 22, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+  /* line 28, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
   50% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
     transform: scale3d(1.1, 1.1, 1.1); }
 
-  /* line 26, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+  /* line 33, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
   100% {
+    -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1); } }
 
-/* line 31, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+/* line 39, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
 body {
   position: relative;
-  margin: 0; }
+  margin: 0;
+  font: 14px Oxygen, sans-serif; }
 
-/* line 36, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+/* line 45, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
 cite {
   position: fixed;
   bottom: 5px;
   right: 5px; }
 
-/* line 42, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+/* line 51, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
 svg {
   position: fixed;
   top: 0;
   left: 0;
   background: #fff;
   transition: -webkit-filter 0.1s; }
-  /* line 49, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+  /* line 58, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
   svg.BREAK {
     -webkit-filter: invert(1);
     filter: invert(1); }
-  /* line 54, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+  /* line 63, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
   svg * {
     -webkit-tap-highlight-color: transparent; }
 
-/* line 59, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+/* line 68, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
 .link line {
   stroke: #696969; }
 
-/* line 63, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+/* line 72, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
 .link line.separator {
   stroke: #fff !important;
   stroke-width: 2px; }
 
-/* line 68, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+/* line 77, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
 .node circle {
   stroke: #000;
   stroke-width: 1.5px; }
-  /* line 72, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+  /* line 81, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
   .node circle:not([energy="0"]) {
     -webkit-filter: url(#drop-shadow);
     filter: url(#drop-shadow);
     -webkit-animation: pulse .5s ease infinite;
     animation: pulse .5s ease inifinite; }
 
-/* line 80, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+/* line 89, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
 .node text {
-  font: 12px Oxygen, sans-serif;
+  font: 14px Oxygen, sans-serif;
   pointer-events: none; }
 
-/* line 85, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+/* line 94, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
 .console {
   position: fixed;
   top: 0;
   left: 0;
   padding: 15px;
-  font: 14px Oxygen, sans-serif;
   background: rgba(53, 175, 240, 0.6);
   border-right: 2px solid rgba(0, 68, 196, 0.81);
   border-bottom: 2px solid rgba(0, 68, 196, 0.81);
   border-bottom-right-radius: 10px; }
-  /* line 98, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+  /* line 105, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
   .console a {
     display: inline-block;
     vertical-align: middle;
@@ -98,25 +104,25 @@ svg {
     border-radius: 50%;
     box-sizing: border-box;
     margin-left: 5px; }
-    /* line 110, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+    /* line 117, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
     .console a#add-hydrogen {
       width: 24px;
       height: 24px;
       padding-top: 1px;
       background: #ED760D; }
-    /* line 117, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+    /* line 124, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
     .console a#add-carbon {
       width: 53px;
       height: 53px;
       padding-top: 16px;
       background: #1F77B4; }
-    /* line 124, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+    /* line 131, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
     .console a#add-nitrogen {
       width: 57px;
       height: 57px;
       padding-top: 18px;
       background: #AEC7E8; }
-    /* line 131, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+    /* line 138, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
     .console a#add-oxygen {
       width: 60px;
       height: 60px;
