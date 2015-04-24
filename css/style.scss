@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Oxygen);
+@import url(http://fonts.googleapis.com/css?family=Lato);
 
 $scaleFactor: 1.1;
 
@@ -36,10 +37,27 @@ $scaleFactor: 1.1;
   }
 }
 
+@-webkit-keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
 body {
   position: relative;
   margin: 0;
   font: 14px Oxygen, sans-serif;
+}
+
+.score-label {
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  font: 14px Lato, sans-serif;
 }
 
 cite {
@@ -74,27 +92,66 @@ svg {
   stroke-width: 2px;
 }
 
-.node circle {
-  stroke: #000;
-  stroke-width: 1.5px;
+.indicator{
+  display: none;
   
-  &:not([energy="0"]) {
-    -webkit-filter: url(#drop-shadow); 
-    filter: url(#drop-shadow);
-    -webkit-animation: pulse .5s ease infinite;
-    animation: pulse .5s ease inifinite;
-    
-    .ios & {
-      -webkit-svg-shadow:0px 0px 10px red;
-      -webkit-filter: none; 
-      filter: none;
-    }
+  &.stretched {
+    display: inline;
+  }
+
+  circle {
+    stroke: #000;
+    stroke-width: 1.5px;
+    fill:dodgerblue;
+  }
+
+  text {
+    font: 14px Lato, sans-serif;
+    pointer-events: none;
+    fill: #fff;
   }
 }
 
-.node text {
-  font: 14px Oxygen,sans-serif;
-  pointer-events: none;
+.broken-indicator{
+  -webkit-animation: fadeOut 2.0s ease-in both;
+  animation: fadeOut 2.0s ease-in both;
+  circle {
+    stroke: #000;
+    stroke-width: 1.5px;
+    fill:red;
+  }
+
+  text {
+    font: 14px Lato, sans-serif;
+    pointer-events: none;
+    fill: #fff;
+  }
+}
+
+
+.node {
+  circle {
+    stroke: #000;
+    stroke-width: 1.5px;
+
+    &:not([energy="0"]) {
+      -webkit-animation: pulse .5s ease infinite;
+      animation: pulse .5s ease inifinite;
+
+      -webkit-filter: url(#drop-shadow); 
+      filter: url(#drop-shadow);
+      .ios & {
+        -webkit-svg-shadow:0px 0px 10px red;
+        -webkit-filter: none; 
+        filter: none;
+      }
+    }
+  }
+
+  text {
+    font: 14px Oxygen,sans-serif;
+    pointer-events: none;
+  }
 }
 
 .console {
@@ -106,7 +163,7 @@ svg {
   background: rgba(53, 175, 240, 0.6);
   border-right: 2px solid rgba(0, 68, 196, 0.81);
   border-bottom: 2px solid rgba(0, 68, 196, 0.81);
-  border-bottom-right-radius: 10px;
+  border-bottom-right-radius: 45px;
   
   a {
     display: inline-block;
