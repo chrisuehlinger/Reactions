@@ -3,16 +3,20 @@
 var poppingSounds;
 
 // the iPhone specifically seems to have problems playing these sounds
-if(navigator.userAgent.match(/iPhone/i))
+if(navigator.userAgent.match(/iPhone/i)) {
   poppingSounds = ['pop.wav', 
                       'pop1.wav', 
                       'pop2.wav' ].map(function(path){return 'audio/' + path;});
-else
+} else {
   poppingSounds = [ 'classic cartoon pop sound 2.wav', 
                         'object1-1-6.wav', 
                         'pop.wav', 
                         'pop1.wav', 
                         'pop2.wav' ].map(function(path){return 'audio/' + path;});
+}
+
+if(/^((?!chrome).)*safari/i.test(navigator.userAgent))
+  $('body').addClass('ios');
 
 var width = window.outerWidth || window.innerWidth || 960,
     height = window.innerHeight;

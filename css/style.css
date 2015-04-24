@@ -77,13 +77,18 @@ svg {
     filter: url(#drop-shadow);
     -webkit-animation: pulse .5s ease infinite;
     animation: pulse .5s ease inifinite; }
+    /* line 87, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+    .ios .node circle:not([energy="0"]) {
+      -webkit-svg-shadow: 0px 0px 10px red;
+      -webkit-filter: none;
+      filter: none; }
 
-/* line 89, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+/* line 95, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
 .node text {
   font: 14px Oxygen, sans-serif;
   pointer-events: none; }
 
-/* line 94, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+/* line 100, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
 .console {
   position: fixed;
   top: 0;
@@ -93,7 +98,7 @@ svg {
   border-right: 2px solid rgba(0, 68, 196, 0.81);
   border-bottom: 2px solid rgba(0, 68, 196, 0.81);
   border-bottom-right-radius: 10px; }
-  /* line 105, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+  /* line 111, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
   .console a {
     display: inline-block;
     vertical-align: middle;
@@ -104,25 +109,25 @@ svg {
     border-radius: 50%;
     box-sizing: border-box;
     margin-left: 5px; }
-    /* line 117, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+    /* line 123, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
     .console a#add-hydrogen {
       width: 24px;
       height: 24px;
       padding-top: 1px;
       background: #ED760D; }
-    /* line 124, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+    /* line 130, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
     .console a#add-carbon {
       width: 53px;
       height: 53px;
       padding-top: 16px;
       background: #1F77B4; }
-    /* line 131, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+    /* line 137, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
     .console a#add-nitrogen {
       width: 57px;
       height: 57px;
       padding-top: 18px;
       background: #AEC7E8; }
-    /* line 138, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
+    /* line 144, /Users/Chris/Development/NextGenLessons/Reactions/css/style.scss */
     .console a#add-oxygen {
       width: 60px;
       height: 60px;
