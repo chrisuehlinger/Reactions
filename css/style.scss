@@ -72,6 +72,7 @@ svg {
   left: 0;
   background: #fff;
   transition: -webkit-filter 0.1s;
+  transition: filter 0.1s;
   
   &.BREAK {
     -webkit-filter: invert(1);
@@ -142,6 +143,12 @@ svg {
       filter: url(#drop-shadow);
       .ios & {
         -webkit-svg-shadow:0px 0px 10px red;
+        -webkit-filter: none; 
+        filter: none;
+      }
+      
+      // Suck it kindle fire
+      @media screen and (max-width: 1200px) and (max-height: 600px){
         -webkit-filter: none; 
         filter: none;
       }
