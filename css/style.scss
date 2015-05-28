@@ -77,6 +77,10 @@ svg {
   &.BREAK {
     -webkit-filter: invert(1);
     filter: invert(1);
+    @media screen and (max-width: 1200px) and (max-height: 600px) {
+      -webkit-filter: none;
+      filter: none;
+    }
   }
   
   * {
@@ -141,6 +145,7 @@ svg {
 
       -webkit-filter: url(#drop-shadow); 
       filter: url(#drop-shadow);
+      
       .ios & {
         -webkit-svg-shadow:0px 0px 10px red;
         -webkit-filter: none; 
