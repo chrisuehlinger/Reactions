@@ -3,7 +3,7 @@
 var poppingSounds;
 
 // the iPhone specifically seems to have problems playing these sounds
-if(/^((?!chrome).)*safari/i.test(navigator.userAgent)) {
+if(/^((?!chrome).)*safari/i.test(navigator.userAgent) || navigator.standalone) {
   $('body').addClass('ios');
   poppingSounds = ['pop.wav', 
                       'pop1.wav', 
